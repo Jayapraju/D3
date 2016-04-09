@@ -1,0 +1,80 @@
+D3 Commands Reference
+
+d3.select("body").append("p").text("New paragraph!");
+
+* Invoked D3's select method, which selects a single element from the DOM using CSS selector syntax. (We selected the body.)
+* Created a new p element and appended that to the end of our selection, meaning just before the closing </body> tag in this case.
+* Set the text content of that new, empty paragraph to “New paragraph!”
+
+d3.select("body").selectAll("p").data(dataset).enter().append("p").text(function(d) { return d; });
+
+* Invoked D3's select method, which selects a single element from the DOM using CSS selector syntax. (We selected the body.)
+* Created a new p element and appended that to the end of our selection, meaning just before the closing </body> tag in this case.
+* Set the text content of that new, empty paragraph to “New paragraph!”
+
+
+Circle
+Rectangle
+Ellipse
+Line
+Polyline
+Polygon
+Triangle
+
+Path
+    MoveTo (Mm)  (x,y)
+    LineTo (Ll)  (x,y)
+        Horizontal LineTo (Hh)  (x)
+        Vertical LineTo (Vv)    (y)
+    CurveTo (Cc)                 (x1y1x2y2xy)
+    Shorthand/Smooth Curveto (Ss)   (x2y2xy)
+    Quadratic Beziere Curve (Qq)    (x1y1xy)
+    Shorthand/Smooth Quadratic (Tt) (xy)
+    Elliptical Arc Curve (Aa)       (rx ry x cx cy)
+    End Path (Zz) (Not Repeatable)   (NA)
+    
+Accessor Function
+    linear
+    step-before
+    step-after
+    basis
+    basis-open
+    basis-closed
+    bundle
+    cardinal
+    cardinal-open
+    cardinal-closed
+    monotone
+    
+    
+The generators include:
+
+d3.svg.line - create a new line generator
+d3.svg.line.radial - create a new radial line generator
+d3.svg.area - create a new area generator
+d3.svg.area.radial - create a new radial area generator
+d3.svg.arc - create a new arc generator
+d3.svg.symbol - create a new symbol generator
+d3.svg.chord - create a new chord generator
+d3.svg.diagonal - create a new diagonal generator
+d3.svg.diagonal.radial - create a new radial diagonal generator
+
+Transition from one domain to another range (Changing scales)
+The D3.js scales are:
+Identity: a special kind of linear scale, 1:1, good for pixel values. input == output
+Linear: transforms one value in the domain interval into a value in the range interval
+Power and Logarithmic scales: sqrt, pow, log – used for exponentially increasing values
+Quantize and Quantile scales: for discrete sets of unique possible values for inputs or outputs
+Ordinal: for non quantitative scales, like names, categories, etc.
+
+There are six types of transformations available:
+
+Transformation Specification	Explanation
+matrix(<a> <b> <c> <d> <e> <f>)	This transform specifies a transformation in the form of a transformation matrix of six values. matrix(a,b,c,d,e,f) is equivalent to applying the transformation matrix [a b c d e f]
+translate(<x> [<y>])	This transform specifies a translation by x and y. If y is not provided, it is assumed to be zero.
+scale(<x> [<y>])	This transform specifies a scale operation by x and y. If y is not provided, it is assumed to be equal to x.
+skewX(<a>)	This transform definition specifies a skew transformation along the X axis by a degrees.
+skewY(<a>)	This transform definition specifies a skew transformation along the Y axis by a degrees.
+
+
+
