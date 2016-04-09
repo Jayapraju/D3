@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>D3 Page Template</title>
+		<script type="text/javascript" src="d3.min.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+//<svg width="50" height="50">
+//  <ellipse cx="25" cy="25" rx="15" ry="10" fill="red" />
+//</svg>
+
+			var ellipseArea = d3.select("body")
+								.append("svg")
+								.attr("width", 1800)
+								.attr("height", 300);
+			
+			var ellipse = ellipseArea.append("ellipse")
+								.attr("cx", 100)
+								.attr("cy", 40)
+								.attr("rx", 70)
+								.attr("ry", 30)
+								.attr("fill", "red");
+								
+		</script>
+	</body>
+</html>

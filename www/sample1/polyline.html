@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>D3 Page Template</title>
+		<script type="text/javascript" src="d3.min.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+//<svg width="50" height="50">
+//  <polyline fill="none" stroke="blue" stroke-width="2"
+//    points="05,30
+//            15,30
+//            15,20
+//            25,20
+//            25,10
+//            35,10" />
+//</svg>
+			var polylineArea = d3.select("body")
+								.append("svg")
+								.attr("width", 1800)
+								.attr("height", 300);
+			
+			var polyline = polylineArea.append("polyline")
+								.attr("stroke", "red")
+								.attr("stroke-width", "6")
+								.attr("fill","none")
+								.attr("points","05,30 15,30 15,20 25,20 25,10 35,10");								
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>D3 Page Template</title>
+		<script type="text/javascript" src="d3.min.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+//The data for our line
+var jsonRectangle = [ { "x": 25,   "y": 25, "height": 30, "width": 30, "fill": "red"},
+					{ "x": 200,   "y": 350, "height": 30, "width": 30, "fill": "green"},
+					{ "x": 75,   "y": 75, "height": 30, "width": 30, "fill": "blue"}];
+
+var max_x = 0; var max_y = 0;
+
+for (var i=0; i<jsonRectangle.length; i++) {
+	var temp_x = jsonRectangle[i].x+jsonRectangle[i].width;
+	var temp_y = jsonRectangle[i].y+jsonRectangle[i].height;
+	max_x = ( temp_x > max_x) ? temp_x : max_x;
+	max_y = ( temp_y > max_y) ? temp_y : max_y;
+}
+
+					
+//The SVG Container
+var svgContainer = d3.select("body").append("svg")
+                                    .attr("width", max_x+20)
+                                    .attr("height", max_y+20);
+									
+var rectangles = svgContainer.selectAll("rect")
+						.data(jsonRectangle)
+						.enter()
+						.append("rect");
+
+//The line SVG Path we draw
+var rectAttribs = rectangles.attr("x", function(d) { return d.x;})
+                            .attr("y", function(d) { return d.y;})
+                            .attr("width", function(d) { return d.width;})
+                            .attr("height", function(d) { return d.height;})
+							.attr("fill", function(d) { return d.fill;});
+		</script>
+	</body>
+</html>

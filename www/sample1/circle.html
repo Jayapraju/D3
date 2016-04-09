@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>D3 Page Template</title>
+		<script type="text/javascript" src="d3.min.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+//<svg width="50" height="50">
+//  <circle cx="25" cy="25" r="25" fill="purple" />
+//</svg>
+
+			var circleArea = d3.select("body")
+								.append("svg")
+								.attr("width", 500)
+								.attr("height", 300);
+			
+			var circle = circleArea.append("circle")
+								.attr("cx", 100)
+								.attr("cy", 100)
+								.attr("r", 80)
+								.attr("fill", "red");
+								
+		</script>
+	</body>
+</html>

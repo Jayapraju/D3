@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>D3 Page Template</title>
+		<script type="text/javascript" src="d3.min.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+//<svg width="50" height="50">
+//  <line x1="5" y1="5" x2="40" y2="40" stroke="gray" stroke-width="5"  />
+//</svg>
+
+			var lineArea = d3.select("body")
+								.append("svg")
+								.attr("width", 1800)
+								.attr("height", 300);
+			
+			var line = lineArea.append("line")
+								.attr("x1", 10)
+								.attr("y1", 10)
+								.attr("x2", 40)
+								.attr("y2", 70)
+								.attr("stroke", "red")
+								.attr("stroke-width", "6");
+								
+		</script>
+	</body>
+</html>
